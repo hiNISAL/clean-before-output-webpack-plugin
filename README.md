@@ -1,6 +1,6 @@
 # clean-before-output-webpack-plugin
 
-在webpack输出文件之前删除目录的plugin
+在webpack输出文件之前删除目录的plugin，**仅在webpack4.x下测试可用**。
 
 ## 使用
 
@@ -23,3 +23,9 @@ module.exports = {
   // ...
 };
 ```
+
+## 参数
+
+### path
+
+在输出文件前要删除的目录，需要绝对路径。
