@@ -1,18 +1,25 @@
-const fs = require('fs');
+const {
+  existsSync,
+  readdirSync,
+  statSync,
+  unlinkSync,
+  rmdirSync,
+} = require('fs');
 
 const delDir = (path) => {
   let files = [];
-  if(fs.existsSync(path)){
-    files = fs.readdirSync(path);
+
+  if(existsSync(path)){
+    files = readdirSync(path);
     files.forEach((file) => {
-      let curPath = path + "/" + file;
-      if(fs.statSync(curPath).isDirectory()){
+      let curPath = `${path}/${file}`;
+      if(statSync(curPath).isDirectory()){
         delDir(curPath);
       } else {
-        fs.unlinkSync(curPath);
+        unlinkSync(curPath);
       }
     });
-    fs.rmdirSync(path);
+    rmdirSync(path);
   }
 }
 
