@@ -29,7 +29,7 @@ class CleanBeforeOutputWebpackPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.emit.tapAsync('CleanDistWebpackPlugin', (compilation, cb) => {
+    compiler.hooks.emit.tapAsync('CleanBeforeOutputWebpackPlugin', (compilation, cb) => {
       if (!this.path) cb();
 
       delDir(this.path);

@@ -1,6 +1,6 @@
 {
   "name": "clean-before-output-webpack-plugin",
-  "version": "1.2.0",
+  "version": "1.2.2",
   "description": "The webpack plugin for clean directory before webpack output bundle files",
   "main": "index.js",
   "scripts": {
